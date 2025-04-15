@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclists commuting in Chicago: exploring experience, views, and route selection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            display: flex;
+            background-color: #f5f5f5;
+        }
+        
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            background-color: #f8f8f8;
+            padding: 20px;
+            overflow-y: auto;
+            border-right: 1px solid #ddd;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.2em;
+        }
+        
+        .nav-links {
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-bottom: 10px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.95em;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        
+        .active-link {
+            border-left: 3px solid #0066cc;
+            padding-left: 10px !important;
+            color: #0066cc !important;
+            font-weight: bold;
+        }
+        
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+            max-width: 800px;
+            background-color: white;
+            min-height: 100vh;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+        
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .author {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .date {
+            color: #888;
+            margin-bottom: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .reference {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 15px;
+            }
+            
+            .content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Contents</h3>
+        <ul class="nav-links">
+            <li><a href="#abstract" class="section-link">Abstract</a></li>
+            <li><a href="#problem" class="section-link">The Problem and Its Setting</a></li>
+            <li><a href="#literature" class="section-link">Review of Related Literature</a></li>
+            <li><a href="#methods" class="section-link">Methods</a></li>
+            <li><a href="#results" class="section-link">Results/Discussion</a></li>
+            <li><a href="#themes" class="section-link">Themes</a></li>
+            <li><a href="#conclusion" class="section-link">Conclusion</a></li>
+            <li><a href="#references" class="section-link">References</a></li>
+            <li><a href="#table-a" class="section-link">Table A: Research Themes and Quotes</a></li>
+            <li><a href="#appendix-a" class="section-link">Appendix A: Interview Instrument</a></li>
+            <li><a href="#appendix-b" class="section-link">Appendix B: Summary Interview Answers</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Cyclists commuting in Chicago: exploring experience, views, and route selection</h1>
+        <p class="author">Alex Broz</p>
+        <p class="date">5/8/2024</p>
+        
+        <div id="abstract" class="section">
+            <h2>Abstract</h2>
+            <p>How is the physical and the geographical connected to the mental and the emotional? This phenomenological study interviewing urban cyclists in Chicago provide some insight towards answering this exceedingly large query. The bike as multifaceted tool and implement of both physical and mental narration is both transformed and transforms the urban landscape.</p>
+        </div>
+        
+        <div id="problem" class="section">
+            <h2>The Problem and Its Setting</h2>
+            <p>The question of "mood", "vibe", "cool" are all extremely subjective categories and ideas none with fully agreed-upon or even fixed definition. Can the physical environment and geography shape our mental space. What if anything is the connection between the two? There are many ways to approach these questions. No matter how one can approach it one must content with the myriad layers and filters of human culture and society. Each approach to this type of inquiry seems to suffer from some aspect of these limitations.</p>
+            
+            <p>I would also argue that any question or investigation into these types of matters is more a question of poetry than it is a question of science and while perhaps it could be measured ethnographically according to proper social science methods rarely are those methods able to convey any of that poetic essence which is so central to these themes. This is not to say that this type of investigation is not possible nor valuable however if the thrust of the query is interested in the nature of the relationship between human beings and their spatial surroundings, this creates an interesting crux.</p>
+            
+            <p>The inquiry is balanced between the hard sciences, the social sciences, and the humanities. The interplay of all three, and their specific role, and even hierarchy of methodology within this type of investigation all pose complex challenges.</p>
+            
+            <p>This studies focus on urban cyclists allows for some way to try to step through this murky morass of competing subjectivities. This narrow focus goes some way towards achieving this breakthrough. Here the bicycle serves as a both a common mediating lens through which the rider is perceiving their environment through; as well as serving as a tool through which the rider shapes and creates the environment around them.</p>
+            
+            <p>This is partially achieved though the unique status of bicycles as transportation in the context of the American social, legal, and infrastructural structures of the urban environment. This unique placement of this spacial/ temporal/ corporeal experience not quite at the center of of the hegemonic structures around it allow for some sense of perspective to appear. This perspective is certainly enough, quite uncertain; and yet some trace essence peers through the layers obscuring of cultural and social filters. How much and how relevant remain to be seen.</p>
+        </div>
+        
+        <div id="literature" class="section">
+            <h2>Review of Related Literature</h2>
+            <p>The literature around this topic is fairly substantial, though cycling does not exist at the same level as say automobile transportation, there is certainly a fair amount of scholarly inquiry into bicycles and the experience of cyclists. Certainly one driving reason for this volume is due to the perception that cycling as a means of transportation is a way to combat or ameliorate the negative affects of anthropocentric climate change. While this is not the focus of this study by any means, and is not always highlighted in the literature (though it is often mentioned), this fact is clearly at least in the background of these studies. The literature reviewed here for this study falls into some major themes.</p>
+            
+            <p>One theme is that of an interesting investigation into perceptions of cyclists. How are cyclists viewed by both avid cyclists as well as non-cyclists. This type of inquiry takes less of a focus on how the act is experienced and rather is intended to organize and understand why some people bike more than others. Again at the root of this type of inquiry is a desire for how to increase the numbers of people who enjoy cycling as well as increase the amount that cyclists will bike.</p>
+            
+            <p>Another significant theme in the literature revolves around how to best collect experiential, mood, and other perceptive data, and then how best to utilize this data. This theme is certainly quite intriguing in the abstract, however this type of affective mapping can oftentimes obscure more than it can reveal. Perhaps the reasons for this disconnect is that the technology which measures the senses or which is used to record the mood is often far too precise as compared to the thing or feeling which is being measured. This then leads to a mismatch where mood and perception are given the same treatment as measurement of distance or volume. While the advent of newer and more exciting technologies often make this type of examination quite seductive, it often fails to meet expectations or will succumb to other hazards of gross assumption. For example if a study is asking cyclists to rate the mood of each part of their route and this is recorded in real time and plotted through the means of GIS on a map; we might be deceived into thinking that the mood exists in the landscape and is tied to some physical feature. Whereas, how exactly mood and emotion are connected or unconnected to the landscape is not thoroughly interrogated. Or are mood and experience produced by the subject and it is incorrect to assume that they exist in the physical world waiting for us to walk by and pick them up?</p>
+            
+            <p>Similar to the first theme, there are also themes in the literature which pertain quite specifically to how to create more cyclists. They have a focus on how people learn to become a cyclist and also the imprecise, sanctioned and yet unsanctioned place of the bicycle and the cyclist in contemporary America's spatial, social, and systemic landscapes. This type of focus seems to take up the most space in the literature, this also makes sense as cycling is generally fit under an urban planning and transformational rubric. This naturally lends itself for a more practical and problem solving goals. While this is acknowledged to be an important facet and does provide some useful background understanding of this population it is not quite the focus of this study.</p>
+            
+            <p>The final literature theme is much closer to the focus of this study and provided the more direct useful comparisons and guidance. Here method and focus is on personal narration, description of the pathways and the thoughts apparent to the cyclists as they move through their environment on the bicycle. This approach provides many useful aspects such as the noting of an all-encompassing subject matter, including notably the monitoring of the body. The conversion of thought, perception, and experience to the record is of course also fraught with complexities, the mere act of creating a narrative and attempting to fill up space is itself an artificial imposition into the study of the experience.</p>
+        </div>
+        
+        <div id="methods" class="section">
+            <h2>Methods</h2>
+            <p>The research approach which this study takes will follow a phenomenological approach. The relationship which is of interest here is that between physical constraints and structure of the environment and the emotional/ mindset pf the human in that space. As that relationship is still quite speculative, we must look to how spaces are experiences and then try to move on from there.</p>
+            
+            <p>The target population for this study is that of urban cyclists in Chicago, IL. Though this a broad category, the hope is to target people who use bicycles for more than just recreation or exercise but to focus on people who use bikes are part of a commute or to get around, though we will also include their recreational activities. The intended sample of this study is a convenient group recruited through word of mouth, as the researcher is connected to a fairly large number of cyclists in Chicago. The intended sample size was that of a target of 10 participants, due to time constraints and challenges in scheduling interviews this study was conducted with 7 participants. In recruiting possible participants it was made known that the research was specific to city cyclists and the focus was towards those who cycle in order to commute as opposed to cycling for exercise. Though these are certainly overlapping categories, it was not hard to maintain this target in the population.</p>
+            
+            <p>Due to this convenient sample the location and demographics of this population is generally limited to the north-side of Chicago and to a population in their 30s and 40s. This is naturally understood to be a limiting factor in the wider implications of this study.</p>
+            
+            <p>This study uses a method of a semi-structured interview. All participants were asked the same questions in roughly the same order though an allowance was made to engage with particular answers and to clarify others as well as follow up on particularly interesting responses. The interview instrument can be seen in the appendix. All interviews were conducted over zoom and the interviews were recorded. A verbal confirmation from each participant was gathered allowing for the interview to be recorded. Each interview was intended to last between 20-40 min and averaged about 25 min each. The recorded interviews were then fed through Otter.ai (a transcription service) this helped in generating transcripts which along with notes taken during the interviews could be cross referenced before being analyzed for content and answers.</p>
+            
+            <p>The instrument itself took a lot of guidance from the literature, especially the inclusion of questions regarding perceptions of safety while riding. The structure of the instrument was built to try to elicit deeper answers especially for the more cerebral questions. This was attempted by initially structuring the questions around a grounding, historically situated starting point. For example, all participants were asked quite early on what they remember about first learning to ride a bike. Though this recollection was not necessarily a focus of this study, it was placed early on as a way to connect all interviewees to their first relationship with the bicycle. It is hoped that this structuring of the questions would allow for more open and free flowing answers further on in the interview when participants were asked about what they thought about when biking and whether they thought differently when biking vs doing other activities. The recorded transcripts were then transcribed and analyzed. Connections, commonalities, outliers, and themes were identified.</p>
+        </div>
+        
+        <div id="results" class="section">
+            <h2>Results/Discussion</h2>
+            <p>There were some generalities to which most or all of the study group exhibited: all 7 rode at least 3 times a week and some did everyday; most did not ride during the winter though some did; everyone mentioned safety being important; most everyone did not stop at stop signs "if they could help it"; most everyone did not ride the wrong way down a one-way street or ride on the sidewalk unless in specific circumstances or to save (to them) significant time or trouble.</p>
+            
+            <p>All but one of the of the study group when asked what they thought about when riding answered some variation of "everything" or "lots of things". The one who answered otherwise said, "Not much, I'm actually present and in the moment" and described a zen-like blankness or flow. Everyone agreed that they thought differently when biking, though how they did was quite subjective. Everyone also mentioned to differing degrees how much more present or aware of their surroundings they were. All but one of the participants rode with other people at times and that it made them ride differently, many by varying their speed either faster or slower. Interestingly the person who did not ride with other people at all, did mention that they were very conscious about their speed as it related to the speed of cars around them.</p>
+        </div>
+        
+        <div id="themes" class="section">
+            <h2>Themes</h2>
+            <p>The wealth of data produced in only 7 conversations lasting over 3 hours is immense. Most of it points towards other questions or also towards a desire to speak with more participants. However despite the uncertainly a number of significant themes became apparent.</p>
+            
+            <p><strong>Route selection</strong> is a significant theme and target of study for this aim. Knowing and thinking and talking about where one bikes to and by which route are significant factors in the experience of riding a bike especially in an urban environment. This study's focus on commuting also drives this as it pairs various destinations with either constant or changing pathways to get there. This wealth of potential data could also be easily gathered via some type of geolocation device. To study the change and frequency of various routes, and even with the right technology capture the route at a micro level. Though expensive, a bike mounted lidar device could map the details of every bump and clear path, measuring potholes and noting exactly where the tread of bike tires passes along and over.</p>
+            
+            <p>The instrument directly asks about how one <strong>learned to ride a bike</strong> and when. Though most people's memories of this event are cloudy, vague, and fairly simple. Clearly learning and teaching at all levels is going on and is happening in often not directly verbally instructional means. Interviewees both describe teaching (through modeling and guidance as well as being knowledgeable and teaching others. Here the skills being alluded to are often not fully verbal but still exist in a physical, auditory, and visual realm.</p>
+            
+            <p><strong>Maps and their connection to biking</strong> were more pervasive than I expected. Many participants regularly checked an algorithmically generated digital map/ route suggestion website before embarking on their journey, even destinations to which they regularly commuted to and did so on the same routes on a regular basis. Further inquiry into this phenomena is warranted, though it is certainly outside the scope of this study. In addition participants also made some reference to mental maps. Oftentimes the checking of the digital map was compared with one's own mental map and the person's mental map always seemed to take preference when there was a disagreement.</p>
+            
+            <p>Another area of emphasis in this interview instrument is that of <strong>sound</strong>. Participants were all asked about whether they intentionally listened to something while they biked, and if so what it was and how they listened to it. The range of differing answers and often opposite or conflicting trends in this area speaks to the intense subjectivity of this area of experience. Often the answer revolved around distraction and either rejecting listening to something because it was itself distracting or deciding that specifically listening to something else would help them not be distracted when biking. As many people reported biking with others, and often sound played a part in making those types of rides distinct an exploration into the sounds of biking and of groups could be quite interesting. While other studies have used portable listening devices to allow the participant to voice their own narration while they rode, using this type of technology could gather the sounds of the ride and these could also be plotted against their route through space.</p>
+            
+            <p>The dynamics of <strong>group riding</strong>, alluded to above, also opens up for more inquiry and exploration. The relationships between riders and each other as well as their relation to the physical urban environment are also open avenues for study. Many participants spoke of feeling that riding with another person was a very different type of experience and that there were certain differences which were apparent.</p>
+            
+            <p>Another underlying theme, one which was heavily alluded to in the literature was that of the <strong>embodied or corporeal aspect</strong> of the experience. Here in the use of this bicycle as tool the mental and the physical meet in a unique geography. This is perhaps the most elusive and yet fascinating theme of this study and one which most closely approaches the underlying goal of this endeavor. Certainly a more intensive interview process, perhaps including both a ride along of interviewer and interviewee, or at least some replication of route to more fully immerse within the pathway of the interviewee.</p>
+        </div>
+        
+        <div id="conclusion" class="section">
+            <h2>Conclusion</h2>
+            <p>Naturally this study is quite limited in many aspects. Much of these limitations are by design, for without any the sprawling unfocused nature of this question is far too broad. Still though a more comprehensive survey of demographic data, especially ages, and locations within the city should be sought. Much of this study is based upon a specifically urban American context. How the embodied experience of bike riding would be experienced in other countries with more, less, and different social and infrastructure landscapes is also a deficiency and an interesting area of further study.</p>
+            
+            <p>Beyond the desire to learn more about these phenomena and to interview more and different people to gain further understanding of these emerging themes, other applications emerge. Certainly as safety is such an important topic to the population focused on here, new ideas gathered from the years of wisdom can be put to some use. For each biker who investigates this research other things will certainly jump out for a myriad reasons. For myself, the idea of the bell as a way to announce presence was both familiar and yet also revelatory.</p>
+            
+            <p>How then are we able to think now about the connection between mental and physical geography? It is the narrative nature of the bicycle as tool itself which also speaks to this perspective. It brings together time and space, intertwined with an immediate physical, corporeal yet highly mental and often sensually bombarded experience. This tool is both shaper and measuring stick, yet leaves little physical trace on the landscape; yet still it produces myriad effects felt and experienced. All this deeply intertwined with the dancing relationship between the temporal and the spatial.</p>
+        </div>
+        
+        <div id="references" class="section">
+            <h2>References</h2>
+            <p class="reference">Forsyth, A. & Krizek, K. (2011). Urban Design: Is there a distinctive view from the bicycle?. <em>Journal of Urban Design, 16(4)</em> 531-549. <a href="https://doi.org/10.1080/13574809.2011.586239" target="_blank">https://doi.org/10.1080/13574809.2011.586239</a></p>
+            
+            <p class="reference">Gatersleben, B. & Haddad, H. (2010). Who is the typical bicyclist? <em>Transportation Research, F(13),</em> 41-48.</p>
+            
+            <p class="reference">Jang, K. & Kim Y. (2019) Crowd-sourced cognitive mapping: A new way of displaying people's cognitive perception of urban space. <em>PloS ONE, 14(6)</em> e0218590. <a href="https://doi.org/10.1371/journal.pone.0218590" target="_blank">https://doi.org/10.1371/journal.pone.0218590</a></p>
+            
+            <p class="reference">Jones, P. (2005). Performing the city: a body and a bicycle take on Birmingham, UK. <em>Social & Cultural Geography, 6(6),</em> 813-830. <a href="https://doi.org/10.1080/14649360500353046" target="_blank">https://doi.org/10.1080/14649360500353046</a></p>
+            
+            <p class="reference">Jones, P. (2012). Sensory indiscipline and affect: a study of commuter cycling. <em>Social & Cultural Geography, 13(6),</em> 645-658. <a href="http://dx.doi/10.1080/14649365.2012.713505" target="_blank">http://dx.doi/10.1080/14649365.2012.713505</a></p>
+            
+            <p class="reference">Lee, D. (2016). Embodied bicycle commuters in a car world. <em>Social & Cultural Geography, 17(3),</em> 401-422. <a href="http://dx.doi.org/10.1080/14649365.2015.1077265" target="_blank">http://dx.doi.org/10.1080/14649365.2015.1077265</a></p>
+            
+            <p class="reference">Manton, R., Rau, H., Fahy, F., Sheahan, J., & Clifford, E. (2016). Using mental mapping to unpack perceived cycling risk. <em>Accident Analysis & Prevention, 88</em>, 138-149.</p>
+            
+            <p class="reference">McNamara, T., Ratcliff, R., & McKoon, G. (1984). The mental representation of knowledge acquired from maps. <em>Journal of Experimental Psychology, 10(4),</em> 723-732.</p>
+            
+            <p class="reference">Pelzer, P. (2010). Bicycling as a way of life: A comparative case study of bicycle culture in Portland, OR and Amsterdam. <em>7th Cycling and Society Symposium Oxford 6th September 2010</em></p>
+            
+            <p class="reference">Reuter L., Fenn, J., Bilo, T., Schulz, M., Weyland, A., Kiesel, A., & Thomaschke, R. (2021). Leisure walks modulate the cognitive and affective representation of the corona pandemic: Employing cognitive-affective maps within a randomized experimental design. <em>Appl Psychol Health Well-Being, 13,</em> 952-967.</p>
+            
+            <p class="reference">Sahlqvist, S., Goodman, A., Jones, T., Powel, J., Song, Y., & Ogilvie, D. (2015). Mechanisms underpinning use of new walking and cycling infrastructure in different contexts: mixed-method analysis. International Journal of Behavioral Nutrition and Physical Activity, 12(24). DOI 10.1186/s12966-015-0185-5</p>
+            
+            <p class="reference">Spinney, J. (2006). A place of sense: a kinaesthetic ethnography of cyclists on Mont Ventoux. <em>Environment and Planning D: Society and Space, 24,</em> 709-732. <a href="https://doi.org/10.1068/d66j" target="_blank">https://doi.org/10.1068/d66j</a></p>
+        </div>
+        
+        <div id="table-a" class="section">
+            <h2>Table A: Select Research Themes and Quotes</h2>
+            <table>
+                <tr>
+                    <th>Themes</th>
+                    <th>Quotes</th>
+                </tr>
+                <tr>
+                    <td>Route Selection (macro)</td>
+                    <td>"then I cut through an alley. There's a little alley south of the park that gets a lot of traffic because there should just be a road there. I think there's a lot of like cars pulling through there and stuff. So I cut through the alley and come out on Allen (st).And that alley basically goes parallel to Milwaukee (ave)."</td>
+                </tr>
+                <tr>
+                    <td>Route Selection (micro)</td>
+                    <td>"In front of the school I'll turn onto the sidewalk at that turn. Okay, I won't turn on the street. I'll take the sidewalk right to the light. The light is at Carmen (st.), and then I'll ride across at the light, like I'm a pedestrian and then I'll either pop back on the street because there's no left turn is allowed while the light is red. Then I'll either pop back up onto the street and if there are people going to school or people on the sidewalk then I won't try to get on the sidewalk. But if no one is there sometimes I'll just go onto the sidewalk and then get back onto Carmen (St)."</td>
+                </tr>
+                <tr>
+                    <td>Teaching/ Learning</td>
+                    <td>(a knowledgeable biking friend) "taught me a lot about what risks I do and do not want to take when biking. Whenever we would bike as a few of us, she would always scan the intersection and then she'd be like 'Okay, we're good to go!'. She was really good at helping people who felt anxious, urban biking, feel safe."</td>
+                </tr>
+                <tr>
+                    <td>Internal Map</td>
+                    <td>('Do you look at a map beforehand?') "Usually, no. I have not found most of the maps offered to be very helpful. I've just lived here for nearly 20 years, I feel like I have a pretty good handle on how to get around all the places I typically bike around here. And if I'm not familiar with the area, I'm comfortable winging it."</td>
+                </tr>
+                <tr>
+                    <td>Sounds/ Safety (bell)</td>
+                    <td>"<em>I use my bell excessively. Like, if I'm passing a car that I'm worried might move, or have somebody jumping out of it, or like a truck is blocking the bike lane or something like that, I will. I'll ring and ring and ring until I'm past.</em> So everybody knows that I'm there. I make sure I'm always wearing a bright jacket. Or have lights always, always when its dark out. I have a super reflective helmet. When we bike with kids, I try to put brightly colored accessories on the bike. We have two bicycles that can carry children. So I try to accessorize those very brightly. And I have one of those little flags at the end that I put on my bike, so that we're more visible, <em>but I also really rely on that bell to be heard a lot. Love it."</em></td>
+                </tr>
+                <tr>
+                    <td>Biking as a group (w/ children)</td>
+                    <td>"We listen to story podcasts. And it's really kind of essential, honestly. And I'm just talking about biking with kids. If we don't have a story on it makes the biking way less safe. And that seems counter intuitive to some people that I've talked to. But, when you see what the dynamic is like when we don't have something to listen to, they're (the children) just talking and their handlebars are going all over the place. And they're turning their heads, and their arguing and they can't keep the pace. Normally they would be starting and stopping. So it really helps just having a story that they're focused on. <em>Their bodies just go into automatic pilot, and its great.</em>"</td>
+                </tr>
+                <tr>
+                    <td>Body awareness/ mental connection</td>
+                    <td>"I usually think about time and whether I'm on time because I'm usually trying to get somewhere with a specific objective in mind. I think about the weather a lot. And things that are immediately relevant to the ride, like 'how's my body feeling?'. If I'm at an intersection, and then I'll think 'Do I remember what street comes after this intersection?' <em>I like to test my mental map in my head and build that as much as possible.</em> I think about 'Should I go this way? Or should I take a different way?'. I also think about 'Oh, that's where that person lives."</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="appendix-a" class="section">
+            <h2>Appendix A: Interview Instrument</h2>
+            <ol>
+                <li>Demographic
+                    <ol type="a">
+                        <li>Age</li>
+                        <li>Gender identity</li>
+                        <li>Highest educational</li>
+                    </ol>
+                </li>
+                <li>Do you consider yourself to be an urban cyclist?
+                    <ol type="a">
+                        <li>What does it mean to be an urban cyclist?</li>
+                    </ol>
+                </li>
+                <li>When did you start to ride a bike? When and how did you learn?</li>
+                <li>Have you been biking since then or has your behavior changed throughout your life?</li>
+                <li>Describe your cycling habits:
+                    <ol type="a">
+                        <li>How often do you ride a bike? How often each week?</li>
+                        <li>Do you ride all year; do your habits change throughout the year?</li>
+                        <li>Do you ride as part of a commute (to go to a destination: work, school, stores, other locations)? Please elaborate. Ask for details about what these common types of journeys are like. Where do you go? When? Why?</li>
+                        <li>Do you ever ride with anyone else? Children? Friends? Family? Partners? Do this effect your ride and how?</li>
+                        <li>Speaking of your commuting trips: Do you ride on the street, do you ride on bike paths, do you ride on the sidewalk? Do you stop at stop signs? Do you ride the wrong way on a one-way street? Please elaborate on your answers. Explain why and what helps you make your choice.</li>
+                        <li>Have you ever been in a bicycle accident? Please describe. Do you think about safety when biking?</li>
+                        <li>What do you do when you bike? Do you listen to something? Wear headphones? Have a speaker? How often do you listen to something? How do you choose this and does this effect your ride? Do you use a smart phone or other device while riding? Explain.</li>
+                        <li>What do you think about when you ride? Please describe your mindset. Do you think differently or the same as when not biking?</li>
+                        <li>How do you choose your routes? Do you look at a map beforehand? Ask specifically about all regular or semi-regular routes. Do you change your routes depending upon different factors?</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div id="appendix-b" class="section">
+            <h2>Appendix B: Summary Interview Answers</h2>
+            <h3>Basic Information</h3>
+            <table>
+                <tr>
+                    <th>Interviewee</th>
+                    <th>What is an urban cyclist</th>
+                    <th>How often</th>
+                    <th>Time of year</th>
+                    <th>Destinations</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Lifestyle, values</td>
+                    <td>3-4 a week</td>
+                    <td>not winter, all weather</td>
+                    <td>Work, school, church, friends houses, bars, grocery store</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>ride in city</td>
+                    <td>3 times a week</td>
+                    <td>not winter</td>
+                    <td>Work, social activities, food and drinks with friends, baseball games, beach</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>comfortable navigating urban areas</td>
+                    <td>3-5 times a week</td>
+                    <td>fair weather</td>
+                    <td>Work, friends, beach, movies, restaurants, shopping</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Transportation</td>
+                    <td>everyday, couple of times a day</td>
+                    <td>all year</td>
+                    <td>school, work, girlfriend, friends houses, sporting event</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Bike to commute on a regular basis</td>
+                    <td>3 times a week</td>
+                    <td>mostly all year</td>
+                    <td>Parks, work, school, recreational places, bars, restaurant</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>regularly travel in a city with your bike</td>
+                    <td>Everyday</td>
+                    <td>most of the year not winter</td>
+                    <td>Work, school, doctor, dry cleaner, beach, bike shop</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>navigating traffic and urban features</td>
+                    <td>3-6 times a week</td>
+                    <td>seasonal, usually not at winter</td>
+                    <td>friends, bar, work, restaurant, park, school, parties, errands</td>
+                </tr>
+            </table>
+            
+            <h3>Biking Behavior</h3>
+            <table>
+                <tr>
+                    <th>Interviewee</th>
+                    <th>Other people</th>
+                    <th>Differences with other people</th>
+                    <th>Sidewalk</th>
+                    <th>Stop Signs</th>
+                    <th>Wrong way</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Yes, child</td>
+                    <td>Go slower, more responsible</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Sometimes</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Spouse</td>
+                    <td>Go slower</td>
+                    <td>usually not</td>
+                    <td>No</td>
+                    <td>Not often</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Yes, children</td>
+                    <td>kids ride on sidewalks so pick rides that makes sense to do that</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>very rarely</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Yes girlfriend</td>
+                    <td>ride faster</td>
+                    <td>No</td>
+                    <td>Slow down</td>
+                    <td>Not often</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Yes, children</td>
+                    <td>changes everything, think a lot about the placement of the other people you are riding with</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>No</td>
+                    <td>NA</td>
+                    <td>Yes</td>
+                    <td>no</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Yes</td>
+                    <td>depends on the person</td>
+                    <td>No</td>
+                    <td>Not if I can help it</td>
+                    <td>sometimes, worry about how they are being perceived</td>
+                </tr>
+            </table>
+            
+            <h3>Mindset and Experience</h3>
+            <table>
+                <tr>
+                    <th>Interviewee</th>
+                    <th>Safety</th>
+                    <th>Listen</th>
+                    <th>to what?</th>
+                    <th>Phone/device</th>
+                    <th>Think about</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Cars, safety vest, bike lights, helmet, presence known</td>
+                    <td>One headphone in non-traffic ear</td>
+                    <td>Music, so it doesn't distract me</td>
+                    <td>Phone mount</td>
+                    <td>Be on time, weather, body, mental map, destination, progress of ride</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Absolutely, avoid traffic areas, take up more space in the road</td>
+                    <td>No, I need to hear whats around me</td>
+                    <td>NA</td>
+                    <td>Check messages when standing</td>
+                    <td>Mindful, like its a practice, think about work, personal life, memories</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>use bell to announce presence, bright jacket, lights, little flags</td>
+                    <td>usually not, I want to be receptive to the world around me</td>
+                    <td>sometimes music at the beach</td>
+                    <td>phone mount</td>
+                    <td>Everything, I hate cars, ruminate on stuff, pretty positive</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>All the time, anticipate what could happen, anticipate my path</td>
+                    <td>Yes in one ear</td>
+                    <td>podcasts, music is distracting</td>
+                    <td>No</td>
+                    <td>Not much, I'm actually present and in the moment, paying attention to what is going on</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>always, not being distracted</td>
+                    <td>speaker</td>
+                    <td>story podcasts, help keep focus</td>
+                    <td>phone mount</td>
+                    <td>Everything, I write songs</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Yes, speed in relation to the cars around me</td>
+                    <td>usually no.</td>
+                    <td>NA</td>
+                    <td>no, so dangerous</td>
+                    <td>If I will be late, safety, other drivers, reflect on my life, especially at night, think about my direct surroundings, body, adjustments make to bicycle</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Helmet, cars</td>
+                    <td>yes</td>
+                    <td>music, audio book, based on mood</td>
+                    <td>No</td>
+                    <td>Lots of things, fun of it. Other people biking, surroundings, body moving faster, My brain is more on</td>
+                </tr>
+            </table>
+            
+            <h3>Route Selection and Thinking</h3>
+            <table>
+                <tr>
+                    <th>Interviewee</th>
+                    <th>Think differently</th>
+                    <th>Change routes</th>
+                    <th>Maps</th>
+                    <th>Other</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>yes, more aware of surroundings,</td>
+                    <td>Don't like to change</td>
+                    <td>Always look, google maps, don't always do it</td>
+                    <td>Like to bike at night</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>More intentionally, more observant, look at trees, defensive riding, room for relaxation</td>
+                    <td>No change, only for speed and safety</td>
+                    <td>No</td>
+                    <td>"I rode to work the other day for the first time this season, it was nice."</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>more positive, sense of autonomy</td>
+                    <td>prioritize bike lanes</td>
+                    <td>Google maps, mellow bike map</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>More present</td>
+                    <td>a lot</td>
+                    <td>yes, google maps</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Biking is such a beautiful thing, so efficient, body, creates a rambling pattern</td>
+                    <td>rarely</td>
+                    <td>Yes</td>
+                    <td>Bike culture</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>little different</td>
+                    <td>I like familiar routes</td>
+                    <td>No</td>
+                    <td>Biking at night, riding home I could smell what everyone was making for dinner, it was so comforting</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>My brain is more on</td>
+                    <td>Mood</td>
+                    <td>yes</td>
+                    <td>Like night time biking</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Script to handle the active class on navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.section-link');
+            
+            // Function to highlight the active section in the navigation
+            function highlightActiveSection() {
+                const scrollPos = window.scrollY;
+                
+                // Find which section is currently in view
+                sections.forEach(function(section, index) {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPos >= sectionTop - 100 && scrollPos < sectionTop + sectionHeight - 100) {
+                        // Remove active class from all links
+                        navLinks.forEach(function(link) {
+                            link.classList.remove('active-link');
+                        });
+                        
+                        // Add active class to the corresponding link
+                        navLinks[index].classList.add('active-link');
+                    }
+                });
+            }
+            
+            // Call the function on load and scroll
+            highlightActiveSection();
+            window.addEventListener('scroll', highlightActiveSection);
+            
+            // Smooth scrolling for navigation links
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
